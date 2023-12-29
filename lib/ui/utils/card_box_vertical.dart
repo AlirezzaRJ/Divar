@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 
 import '../../constants/constants.dart';
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+class CardItemVertizal extends StatelessWidget {
+  const CardItemVertizal({super.key});
 
   @override
   Widget build(BuildContext context) {

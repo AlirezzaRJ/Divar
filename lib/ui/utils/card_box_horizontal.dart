@@ -2,14 +2,14 @@ import 'package:divar/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class ProductItem2 extends StatefulWidget {
-  const ProductItem2({super.key});
+class CardItemHorizontal extends StatefulWidget {
+  const CardItemHorizontal({super.key});
 
   @override
-  State<ProductItem2> createState() => _ProductItem2State();
+  State<CardItemHorizontal> createState() => _CardItemHorizontalState();
 }
 
-class _ProductItem2State extends State<ProductItem2> {
+class _CardItemHorizontalState extends State<CardItemHorizontal> {
   @override
   Widget build(BuildContext context) {
     return Padding(

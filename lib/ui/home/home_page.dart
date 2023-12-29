@@ -1,11 +1,11 @@
-import 'package:divar/ui/product_page/product_page.dart';
-import 'package:divar/ui/utils/ads_box2.dart';
-import 'package:divar/ui/utils/customappbar.dart';
+import 'package:divar/ui/cardPage/card_page.dart';
+import 'package:divar/ui/utils/card_box_horizontal.dart';
+import 'package:divar/ui/utils/homepage_appbar.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/constants.dart';
 
-import '../utils/ads_box.dart';
+import '../utils/card_box_vertical.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,16 +28,16 @@ class _HomePageState extends State<HomePage> {
               SliverPersistentHeader(
                 pinned: true,
                 floating: true,
-                delegate: CustomeAppBar(),
+                delegate: HomePageAppBar(),
               ),
               // Title List(1)
               const GetCategoryTitle(),
-              // AdsBox list(1)
-              const GetAdsBox(),
+              // CardItemVertical list(1)
+              const GetCardItemVertical(),
               // Title List(2)
               const GetCategoryTitle2(),
-              // AdsBox list(2)
-              const GetAdsBox2(),
+              // CardItemHorizontal list(2)
+              const GetCardItemHorizontal(),
             ],
           ),
         ),
@@ -46,9 +46,9 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// ListView.builder | AdsBox list(1)
-class GetAdsBox extends StatelessWidget {
-  const GetAdsBox({
+// ListView.builder | CardItemVertical list(1)
+class GetCardItemVertical extends StatelessWidget {
+  const GetCardItemVertical({
     super.key,
   });
 
@@ -66,21 +66,21 @@ class GetAdsBox extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ProductPage();
+                      return const CardPage();
                     },
                   ),
                 );
               },
-              child: const ProductItem()),
+              child: const CardItemVertizal()),
         ),
       ),
     );
   }
 }
 
-// ListView.builder | AdsBox list(2)
-class GetAdsBox2 extends StatelessWidget {
-  const GetAdsBox2({
+// ListView.builder | CardItemHorizontal list(2)
+class GetCardItemHorizontal extends StatelessWidget {
+  const GetCardItemHorizontal({
     super.key,
   });
 
@@ -97,18 +97,18 @@ class GetAdsBox2 extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const ProductPage();
+                    return const CardPage();
                   },
                 ),
               );
             },
-            child: const ProductItem2()),
+            child: const CardItemHorizontal()),
       ),
     );
   }
 }
 
-// Title | AdsBox list(1)
+// Title | CardItemVertical list(1)
 class GetCategoryTitle extends StatelessWidget {
   const GetCategoryTitle({
     super.key,
@@ -148,7 +148,7 @@ class GetCategoryTitle extends StatelessWidget {
   }
 }
 
-// Title | AdsBox list(2)
+// Title | CardItemHorizontal list(2)
 class GetCategoryTitle2 extends StatelessWidget {
   const GetCategoryTitle2({
     super.key,
