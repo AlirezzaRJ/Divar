@@ -8,14 +8,14 @@ import '../add-ads/add_ads_page.dart';
 import '../home/home_page.dart';
 import '../profile/profile_page.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class CustomBottomNavigationBar extends StatefulWidget {
+  const CustomBottomNavigationBar({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int selectedBottomNavigationIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
               },
               currentIndex: selectedBottomNavigationIndex,
               type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.white,
               elevation: 0,
               selectedLabelStyle: TextStyle(
                   fontFamily: 'shabnamB',

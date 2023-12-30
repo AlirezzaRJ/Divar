@@ -1,5 +1,5 @@
 import 'package:divar/constants/constants.dart';
-import 'package:divar/ui/mainPage/main_page.dart';
+import 'package:divar/ui/BottomNavigationBar/bottomnavigationbar_page.dart';
 import 'package:divar/ui/utils/subject_text_row.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -328,7 +328,7 @@ class _AddAdsPageStep4State extends State<AddAdsPageStep4> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const MainPage();
+                          return const CustomBottomNavigationBar();
                         },
                       ),
                     );

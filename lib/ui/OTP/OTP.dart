@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 // This page has small problems , problems : OTPTextField
-import 'package:divar/ui/mainPage/main_page.dart';
+import 'package:divar/ui/BottomNavigationBar/bottomnavigationbar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -72,7 +72,7 @@ class _OtpPageState extends State<OtpPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const MainPage();
+                        return const CustomBottomNavigationBar();
                       },
                     ),
                   );
@@ -115,7 +115,7 @@ class _OtpPageState extends State<OtpPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const MainPage();
+                          return const CustomBottomNavigationBar();
                         },
                       ),
                     );
