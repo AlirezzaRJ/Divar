@@ -1,3 +1,4 @@
+import 'package:divar/ui/utils/subject_text_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:gap/gap.dart';
@@ -44,7 +45,7 @@ class _CardPageState extends State<CardPage> with TickerProviderStateMixin {
               // Warning Tab
               const WarningTab(),
               const SliverGap(32.0),
-// Tabar
+              // Tabar
               SliverToBoxAdapter(
                 child: SizedBox(
                   width: size.width,
@@ -264,19 +265,8 @@ class DetailsTab extends StatelessWidget {
                   ),
                 ),
                 const Gap(32.0),
-                Row(
-                  children: [
-                    Image.asset('assets/images/map.png'),
-                    const Gap(8.0),
-                    Text(
-                      'موقعیت مکانی',
-                      style: TextStyle(
-                          fontFamily: 'shabnamB',
-                          fontSize: 16.0,
-                          color: Constants.blackColor),
-                    )
-                  ],
-                ),
+                const SubjectTextRow(
+                    icon: 'assets/images/map.png', text: 'موقعیت مکانی'),
                 const Gap(16.0),
                 Container(
                   alignment: Alignment.center,
@@ -820,7 +810,7 @@ class TabBarViewDelegate extends SliverPersistentHeaderDelegate {
   }
 }
 
- // Bottom NavigationBar 
+// Bottom NavigationBar
 class BottomNavigationBar extends StatelessWidget {
   const BottomNavigationBar({super.key});
 

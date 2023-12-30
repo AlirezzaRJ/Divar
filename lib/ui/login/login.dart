@@ -1,9 +1,10 @@
-import 'package:divar/ui/OTP/OTP.dart';
 import 'package:divar/ui/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../constants/constants.dart';
+import '../utils/custom_elevated_button.dart';
+import '../utils/custom_text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Title
                 Row(
                   children: [
                     Text(
@@ -40,6 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 const Gap(16.0),
+                // Text
                 Text(
                   'خوشحالیم که مجددا آویز رو برای آگهی انتخاب کردی!',
                   style: TextStyle(
@@ -48,101 +51,14 @@ class _LoginPageState extends State<LoginPage> {
                       fontSize: 14.0),
                 ),
                 const Gap(32.0),
-                TextFormField(
-                  // controller: controller,
-                  // textDirection: textDirection,
-                  keyboardType: TextInputType.phone,
-                  cursorColor: Constants.primaryColor,
-                  decoration: InputDecoration(
-                    errorStyle: const TextStyle(
-                      fontFamily: 'shabnamB',
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 1.5,
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 1.5,
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: Constants.fieldColor,
-                    hintText: 'شماره موبایل',
-                    hintStyle: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontSize: 16.0,
-                      color: Constants.textfieldColor,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 16.0, horizontal: 10.0),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Constants.fieldColor,
-                        width: 2.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Constants.textfieldColor,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'shabnamB',
-                    fontSize: 14.0,
-                    color: Constants.blackColor,
-                  ),
-                  // validator: validator,
+                // CustomTextFormField
+                const CustomTextFormField(
+                  hintText: 'شماره موبایل',
                 ),
                 const Spacer(),
-                SizedBox(
-                  height: 40,
-                  width: 382,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Constants.primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const OtpPage();
-                            },
-                          ),
-                        );
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'مرحله بعد',
-                            style: TextStyle(
-                                fontFamily: 'shabnam',
-                                color: Constants.whiteColor,
-                                fontSize: 16.0),
-                          ),
-                          const Gap(12.0),
-                          Image.asset('assets/images/arrow-left.png'),
-                          // Icon(
-                          //   Icons.arrow_forward_ios_rounded,
-                          //   color: Constants.whiteColor,
-                          //   size: 24.0,
-                          // )
-                        ],
-                      )),
+                // ElevatedButton
+                const CustomElevatedButton(
+                  elevatedButtonText: 'مرحله بعد',
                 ),
                 const Gap(16.0),
                 Row(

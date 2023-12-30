@@ -55,171 +55,59 @@ class _AddAdsPageState extends State<AddAdsPage> {
                       ),
                     );
                   },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          'اجاره مسکونی',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.primaryColor,
-                        )
-                      ],
-                    ),
+                  child: const AddAdsPageContainer(
+                    text: 'اجاره مسکونی',
                   ),
                 ),
                 const Gap(16.0),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  height: 45.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.0),
-                    border:
-                        Border.all(color: Constants.borderColor, width: 1.5),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'فروش مسکونی',
-                        style: TextStyle(
-                            fontFamily: 'shabnamM',
-                            fontSize: 16.0,
-                            color: Constants.blackColor),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Constants.primaryColor,
-                      )
-                    ],
-                  ),
-                ),
+                const AddAdsPageContainer(text: 'فروش مسکونی'),
                 const Gap(16.0),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  height: 45.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.0),
-                    border:
-                        Border.all(color: Constants.borderColor, width: 1.5),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'فروش دفاتر اداری و تجاری',
-                        style: TextStyle(
-                            fontFamily: 'shabnamM',
-                            fontSize: 16.0,
-                            color: Constants.blackColor),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Constants.primaryColor,
-                      )
-                    ],
-                  ),
-                ),
+                const AddAdsPageContainer(text: 'فروش دفاتر اداری و تجاری'),
                 const Gap(16.0),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  height: 45.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.0),
-                    border:
-                        Border.all(color: Constants.borderColor, width: 1.5),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'اجاره دفاتر اداری و تجاری',
-                        style: TextStyle(
-                            fontFamily: 'shabnamM',
-                            fontSize: 16.0,
-                            color: Constants.blackColor),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Constants.primaryColor,
-                      )
-                    ],
-                  ),
-                ),
+                const AddAdsPageContainer(text: 'اجاره دفاتر اداری و تجاری'),
                 const Gap(16.0),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  height: 45.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.0),
-                    border:
-                        Border.all(color: Constants.borderColor, width: 1.5),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'اجاره کوتاه مدت',
-                        style: TextStyle(
-                            fontFamily: 'shabnamM',
-                            fontSize: 16.0,
-                            color: Constants.blackColor),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Constants.primaryColor,
-                      )
-                    ],
-                  ),
-                ),
+                const AddAdsPageContainer(text: 'اجاره کوتاه مدت'),
                 const Gap(16.0),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  height: 45.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.0),
-                    border:
-                        Border.all(color: Constants.borderColor, width: 1.5),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'پروژه های ساخت و ساز',
-                        style: TextStyle(
-                            fontFamily: 'shabnamM',
-                            fontSize: 16.0,
-                            color: Constants.blackColor),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Constants.primaryColor,
-                      )
-                    ],
-                  ),
-                ),
+                const AddAdsPageContainer(text: 'پروژه های ساخت و ساز'),
               ],
             ),
           )),
+    );
+  }
+}
+ // Add Ads Page Container
+class AddAdsPageContainer extends StatelessWidget {
+  final String text;
+  const AddAdsPageContainer({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      height: 45.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.0),
+        border: Border.all(color: Constants.borderColor, width: 1.5),
+      ),
+      child: Row(
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+                fontFamily: 'shabnamM',
+                fontSize: 16.0,
+                color: Constants.blackColor),
+          ),
+          const Spacer(),
+          Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Constants.primaryColor,
+          )
+        ],
+      ),
     );
   }
 }

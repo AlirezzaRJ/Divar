@@ -1,5 +1,6 @@
 import 'package:divar/constants/constants.dart';
 import 'package:divar/ui/mainPage/main_page.dart';
+import 'package:divar/ui/utils/subject_text_row.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -58,19 +59,8 @@ class _AddAdsPageStep4State extends State<AddAdsPageStep4> {
               left: 16.0, right: 16.0, top: 36.0, bottom: 36.0),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Image.asset('assets/images/camera.png'),
-                  const Gap(8.0),
-                  Text(
-                    'تصویر آویز',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/camera.png', text: 'تصویر آویز'),
               const Gap(26.0),
               DottedBorder(
                 borderType: BorderType.RRect,
@@ -128,19 +118,8 @@ class _AddAdsPageStep4State extends State<AddAdsPageStep4> {
                 ),
               ),
               const Gap(32.0),
-              Row(
-                children: [
-                  Image.asset('assets/images/edit-2.png'),
-                  const Gap(8.0),
-                  Text(
-                    'عنوان آویز',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/edit-2.png', text: 'عنوان آویز'),
               const Gap(20.0),
               TextFormField(
                 // controller: controller,
@@ -198,19 +177,8 @@ class _AddAdsPageStep4State extends State<AddAdsPageStep4> {
                 // validator: validator,
               ),
               const Gap(32.0),
-              Row(
-                children: [
-                  Image.asset('assets/images/clipboard-text.png'),
-                  const Gap(8.0),
-                  Text(
-                    'توضیحات',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/clipboard-text.png', text: 'توضیحات'),
               const Gap(20.0),
               TextFormField(
                 textAlignVertical: TextAlignVertical.top,

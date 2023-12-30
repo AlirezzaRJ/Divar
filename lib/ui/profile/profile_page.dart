@@ -5,6 +5,8 @@ import 'package:gap/gap.dart';
 import '../../constants/constants.dart';
 
 import '../utils/profile_appbar.dart';
+import '../utils/profile_page_container.dart';
+import '../utils/subject_text_row.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -25,31 +27,26 @@ class _ProfilePageState extends State<ProfilePage> {
             textDirection: TextDirection.rtl,
             child: CustomScrollView(
               slivers: [
+                // AppBar
                 SliverPersistentHeader(
                   pinned: true,
                   floating: true,
-                  delegate: CustomeAppBar2(),
+                  delegate: ProfileAppBar(),
                 ),
+                // SearchBox
                 const SliverToBoxAdapter(
                   child: SearchBox(),
                 ),
                 const SliverGap(20.0),
-                SliverToBoxAdapter(
-                  child: Row(
-                    children: [
-                      Image.asset('assets/images/profile-title.png'),
-                      const Gap(8.0),
-                      Text(
-                        'حساب کاربری',
-                        style: TextStyle(
-                            fontFamily: 'shabnamB',
-                            fontSize: 16.0,
-                            color: Constants.blackColor),
-                      )
-                    ],
+              // Subject Text
+                const SliverToBoxAdapter(
+                  child: SubjectTextRow(
+                    icon: 'assets/images/profile-title.png',
+                    text: 'حساب کاربری',
                   ),
                 ),
                 const SliverGap(20),
+                // Account Info Container
                 SliverToBoxAdapter(
                   child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -120,223 +117,38 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 const SliverGap(30.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/note-2.png'),
-                        const Gap(12.0),
-                        Text(
-                          'آگهی های من',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
+                // ProfilePageContainer
+                const ProfilePageContainer(
+                  icon: 'assets/images/note-2.png',
+                  text: 'آگهی های من',
                 ),
                 const SliverGap(16.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/card.png'),
-                        const Gap(12.0),
-                        Text(
-                          'پرداخت های من',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                const ProfilePageContainer(
+                    icon: 'assets/images/card.png', text: 'پرداخت های من'),
+
                 const SliverGap(16.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/eye.png'),
-                        const Gap(12.0),
-                        Text(
-                          'بازدید های اخیر',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                const ProfilePageContainer(
+                    icon: 'assets/images/eye.png', text: 'بازدید های اخیر'),
+
                 const SliverGap(16.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/save-2.png'),
-                        const Gap(12.0),
-                        Text(
-                          'ذخیره شده ها',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                const ProfilePageContainer(
+                    icon: 'assets/images/save-2.png', text: 'ذخیره شده ها'),
+
                 const SliverGap(16.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/setting.png'),
-                        const Gap(12.0),
-                        Text(
-                          'تنظیمات',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                const ProfilePageContainer(
+                    icon: 'assets/images/setting.png', text: 'تنظیمات'),
+
                 const SliverGap(16.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/message-question.png'),
-                        const Gap(12.0),
-                        Text(
-                          'پشتیبانی و قوانین',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                const ProfilePageContainer(
+                    icon: 'assets/images/message-question.png',
+                    text: 'پشتیبانی و قوانین'),
+
                 const SliverGap(16.0),
-                SliverToBoxAdapter(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border:
-                          Border.all(color: Constants.borderColor, width: 1.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/info-circle.png'),
-                        const Gap(12.0),
-                        Text(
-                          'درباره آویز',
-                          style: TextStyle(
-                              fontFamily: 'shabnamM',
-                              fontSize: 16.0,
-                              color: Constants.blackColor),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Constants.numberverifytextfieldColor,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                const ProfilePageContainer(
+                    icon: 'assets/images/info-circle.png', text: 'درباره آویز'),
+
                 const SliverGap(10.0),
+                // Version Text
                 SliverToBoxAdapter(
                   child: Column(
                     children: [

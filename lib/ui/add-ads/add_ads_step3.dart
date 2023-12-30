@@ -1,5 +1,6 @@
 import 'package:divar/constants/constants.dart';
 import 'package:divar/ui/add-ads/add_ads_step4.dart';
+import 'package:divar/ui/utils/subject_text_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:gap/gap.dart';
@@ -56,19 +57,8 @@ class _AddAdsPageStep3State extends State<AddAdsPageStep3> {
               left: 16.0, right: 16.0, top: 36.0, bottom: 36.0),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Image.asset('assets/images/map.png'),
-                  const Gap(8.0),
-                  Text(
-                    'موقعیت مکانی',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/map.png', text: 'موقعیت مکانی'),
               const Gap(16.0),
               Text(
                 'بعد انتخاب محل دقیق روی نقشه میتوانید نمایش آن را فعال یا غیر فعال کید تا حریم خصوصی شما خفظ شود.',

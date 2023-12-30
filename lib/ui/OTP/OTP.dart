@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-
+// This page has small problems , problems : OTPTextField
 import 'package:divar/ui/mainPage/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -30,6 +30,7 @@ class _OtpPageState extends State<OtpPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Title
               Text(
                 textAlign: TextAlign.start,
                 'تایید شماره موبایل',
@@ -39,6 +40,7 @@ class _OtpPageState extends State<OtpPage> {
                     color: Constants.blackColor),
               ),
               const Gap(16.0),
+              // Text
               Text(
                 textAlign: TextAlign.start,
                 'کد ورود پیامک شده را وارد کنید',

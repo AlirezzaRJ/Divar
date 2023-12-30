@@ -1,9 +1,10 @@
-import 'package:divar/ui/OTP/OTP.dart';
 import 'package:divar/ui/login/login.dart';
+import 'package:divar/ui/utils/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../constants/constants.dart';
+import '../utils/custom_elevated_button.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -28,6 +29,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Row(
                   children: [
+                    // Title
                     Text(
                       'خوش اومدی به',
                       style: TextStyle(
@@ -40,6 +42,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ],
                 ),
                 const Gap(16.0),
+                // Text
                 Text(
                   'این فوق العادست که آویزو برای آگهی هات انتخاب کردی!',
                   style: TextStyle(
@@ -48,157 +51,15 @@ class _SignUpPageState extends State<SignUpPage> {
                       fontSize: 14.0),
                 ),
                 const Gap(32.0),
-                TextFormField(
-                  // controller: controller,
-                  // textDirection: textDirection,
-                  keyboardType: TextInputType.text,
-                  cursorColor: Constants.primaryColor,
-                  decoration: InputDecoration(
-                    errorStyle: const TextStyle(
-                      fontFamily: 'shabnamB',
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 1.5,
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 1.5,
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: Constants.fieldColor,
-                    hintText: 'نام و نام خانوادگی',
-                    hintStyle: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontSize: 16.0,
-                      color: Constants.textfieldColor,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 16.0, horizontal: 10.0),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Constants.fieldColor,
-                        width: 2.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Constants.textfieldColor,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'shabnamB',
-                    fontSize: 14.0,
-                    color: Constants.blackColor,
-                  ),
-                  // validator: validator,
-                ),
+                // CustomTextFormField (1)
+                const CustomTextFormField(hintText: 'نام و نام خانوادگی'),
                 const Gap(24.0),
-                TextFormField(
-                  // controller: controller,
-                  // textDirection: textDirection,
-                  keyboardType: TextInputType.phone,
-                  cursorColor: Constants.primaryColor,
-                  decoration: InputDecoration(
-                    errorStyle: const TextStyle(
-                      fontFamily: 'shabnamB',
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 1.5,
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 1.5,
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: Constants.fieldColor,
-                    hintText: 'شماره موبایل',
-                    hintStyle: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontSize: 16.0,
-                      color: Constants.textfieldColor,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 16.0, horizontal: 10.0),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Constants.fieldColor,
-                        width: 2.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Constants.textfieldColor,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'shabnamB',
-                    fontSize: 14.0,
-                    color: Constants.blackColor,
-                  ),
-                  // validator: validator,
-                ),
+                // CustomTextFormField (2)
+                const CustomTextFormField(hintText: 'شماره موبایل'),
                 const Spacer(),
-                SizedBox(
-                  height: 40,
-                  width: 382,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Constants.primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const OtpPage();
-                            },
-                          ),
-                        );
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'مرحله بعد',
-                            style: TextStyle(
-                                fontFamily: 'shabnam',
-                                color: Constants.whiteColor,
-                                fontSize: 16.0),
-                          ),
-                          const Gap(12.0),
-                          Image.asset('assets/images/arrow-left.png'),
-                          // Icon(
-                          //   Icons.arrow_forward_ios_rounded,
-                          //   color: Constants.whiteColor,
-                          //   size: 24.0,
-                          // )
-                        ],
-                      )),
+                // ElevatedButton
+                const CustomElevatedButton(
+                  elevatedButtonText: 'مرحله بعد',
                 ),
                 const Gap(16.0),
                 Row(

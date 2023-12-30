@@ -1,5 +1,6 @@
 import 'package:divar/constants/constants.dart';
 import 'package:divar/ui/add-ads/add_ads_step3.dart';
+import 'package:divar/ui/utils/subject_text_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:gap/gap.dart';
@@ -59,19 +60,9 @@ class _AddAdsPageStep2State extends State<AddAdsPageStep2> {
               left: 16.0, right: 16.0, top: 36.0, bottom: 36.0),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Image.asset('assets/images/category-2.png'),
-                  const Gap(8.0),
-                  Text(
-                    'انتخاب دسته بندی آویز',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/category-2.png',
+                  text: 'انتخاب دسته بندی آویز'),
               const Gap(25.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -148,19 +139,8 @@ class _AddAdsPageStep2State extends State<AddAdsPageStep2> {
                 ],
               ),
               const Gap(25.0),
-              Row(
-                children: [
-                  Image.asset('assets/images/clipboard.png'),
-                  const Gap(8.0),
-                  Text(
-                    'ویژگی ها',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/clipboard.png', text: 'ویژگی ها'),
               const Gap(25.0),
               Column(
                 children: [
@@ -334,19 +314,8 @@ class _AddAdsPageStep2State extends State<AddAdsPageStep2> {
                 ],
               ),
               const Gap(25.0),
-              Row(
-                children: [
-                  Image.asset('assets/images/magicpen.png'),
-                  const Gap(8.0),
-                  Text(
-                    'امکانات',
-                    style: TextStyle(
-                        fontFamily: 'shabnamB',
-                        fontSize: 16.0,
-                        color: Constants.blackColor),
-                  )
-                ],
-              ),
+              const SubjectTextRow(
+                  icon: 'assets/images/magicpen.png', text: 'امکانات'),
               const Gap(20.0),
               Container(
                 padding:
